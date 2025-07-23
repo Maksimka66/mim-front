@@ -6,7 +6,7 @@ import { View } from "react-native";
 function Gallery() {
   return (
     <View>
-      <Link href="/(tabs)/index" push asChild>
+      <Link href="/(tabs)/gallery" push asChild>
         <FontAwesome.Button name="arrow-right" />
       </Link>
     </View>
