@@ -30,7 +30,7 @@ export default function Index() {
         />
       </View>
       <View>
-        <Link href="/(tabs)/gallery" push asChild>
+        <Link href="/(tabs)/home" push asChild>
           <FontAwesome.Button name="arrow-right" backgroundColor="fff" />
         </Link>
       </View>
