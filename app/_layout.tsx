@@ -7,7 +7,11 @@ export default function RootLayout() {
   return (
     <React.Fragment>
       <StatusBar barStyle="default" />
-      <Stack />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      ></Stack>
     </React.Fragment>
   );
 }

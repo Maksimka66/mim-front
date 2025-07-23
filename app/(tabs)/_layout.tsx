@@ -8,9 +8,12 @@ export default function Layout() {
   return (
     <Tabs
       screenOptions={{
+        tabBarActiveTintColor: "#0D919BD6",
+        tabBarInactiveTintColor: "#fff",
+        tabBarAllowFontScaling: true,
         tabBarShowLabel: false,
         tabBarBackground: () => (
-          <View className="flex-1 rounded-full overflow-hidden">
+          <View className="flex-1 rounded-2xl overflow-hidden">
             <LinearGradient
               colors={[
                 "#FEA339DB",
@@ -38,8 +41,8 @@ export default function Layout() {
         name="home"
         options={{
           headerShown: false,
-          tabBarIcon: () => (
-            <MaterialIcons name="home" size={28} color="#fff" />
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="home" size={28} color={color} />
           ),
         }}
       />
@@ -47,8 +50,8 @@ export default function Layout() {
         name="gallery"
         options={{
           headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <MaterialIcons name="palette" size={28} color="#fff" />
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="palette" size={28} color={color} />
           ),
         }}
       />
@@ -57,8 +60,8 @@ export default function Layout() {
         options={{
           headerShown: false,
 
-          tabBarIcon: ({ focused }) => (
-            <FontAwesome name="heart" size={28} color="#fff" />
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name="heart" size={28} color={color} />
           ),
         }}
       />
