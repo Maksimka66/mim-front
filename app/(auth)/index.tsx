@@ -1,6 +1,7 @@
+import ActionIcon from "@/components/ActionIcon";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Link, Stack } from "expo-router";
-import { Image, View } from "react-native";
+import { router, Stack } from "expo-router";
+import { Image, TouchableOpacity, View } from "react-native";
 
 export default function Index() {
   return (
@@ -29,10 +30,14 @@ export default function Index() {
           backgroundColor="#d38e57"
         />
       </View>
+      <ActionIcon />
       <View>
-        <Link href="/(tabs)/home" push asChild>
-          <FontAwesome.Button name="arrow-right" backgroundColor="fff" />
-        </Link>
+        <TouchableOpacity onPress={() => router.push("/(tabs)/home")}>
+          <FontAwesome.Button name="arrow-right" />
+        </TouchableOpacity>
+        {/* <Link href="/(tabs)/home" push asChild>
+          <FontAwesome.Button name="arrow-right" />
+        </Link> */}
       </View>
     </View>
   );
