@@ -1,10 +1,11 @@
+import ActionIcon from "@/components/ActionIcon";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
 import React from "react";
 import { View } from "react-native";
 
-function Gallery() {
+export default function Home() {
   return (
     <View className="flex-1">
       <View className="w-[95%] h-10 self-center">
@@ -18,8 +19,7 @@ function Gallery() {
       <Link href="/(tabs)/gallery" push asChild>
         <FontAwesome.Button name="arrow-right" />
       </Link>
+      <ActionIcon name="facebook" />
     </View>
   );
 }
-
-export default Gallery;
