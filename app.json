@@ -17,11 +17,7 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-<<<<<<< HEAD
       "package": "com.petrashchukim.MiM"
-=======
-      "package": "com.valentyna123.MiM"
->>>>>>> 72d23eb58ea85712d3e44794f8fb7a40d86ff3d4
     },
     "web": {
       "bundler": "metro",
@@ -46,11 +42,7 @@
     "extra": {
       "router": {},
       "eas": {
-<<<<<<< HEAD
         "projectId": "c6cd4e38-ba17-4569-ad12-403f6324bdcb"
-=======
-        "projectId": "3aaeaf0a-5dc4-4085-94c3-e54fbe71ec68"
->>>>>>> 72d23eb58ea85712d3e44794f8fb7a40d86ff3d4
       }
     }
   }

@@ -1,44 +1,72 @@
-import ActionIcon from "@/components/ActionIcon";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { router, Stack } from "expo-router";
-import { Image, TouchableOpacity, View } from "react-native";
+import { Stack } from "expo-router";
+import { useColorScheme } from "nativewind";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
+  const { colorScheme, setColorScheme } = useColorScheme();
+
+  const toggleTheme = () => {
+    setColorScheme(colorScheme === "dark" ? "light" : "dark");
+  };
   return (
-    <View className="flex-1 items-center justify-between bg-background dark:bg-background-dark">
+    <SafeAreaView className="flex-1 items-center justify-center bg-background dark:bg-background-dark">
       <Stack.Screen options={{ headerShown: false }} />
-      <View>
-        <Image
-          source={require("@/assets/images/logo_mim_light.png")}
-          className="mb-10"
-        />
-      </View>
-      <View className="w-[80%] gap-2">
-        <FontAwesome.Button
-          name="facebook"
-          className="py-2 self-center"
-          backgroundColor="#d38e57"
-        />
-        <FontAwesome.Button
-          name="google"
-          className="py-2 self-center"
-          backgroundColor="#d38e57"
-        />
-        <FontAwesome.Button
-          name="apple"
-          className="py-2 self-center"
-          backgroundColor="#d38e57"
-        />
-      </View>
-      <ActionIcon />
-      <View>
-        <TouchableOpacity onPress={() => router.push("/(tabs)/home")}>
-          <FontAwesome.Button name="arrow-right" />
+      <View className="w-full">
+        <TouchableOpacity className="w-20 self-end">
+          <FontAwesome.Button
+            onPress={toggleTheme}
+            name={colorScheme === "light" ? "sun-o" : "moon-o"}
+            color="black"
+            size={30}
+            className="self-center"
+            backgroundColor="transparent"
+          />
         </TouchableOpacity>
-        {/* <Link href="/(tabs)/home" push asChild>
-          <FontAwesome.Button name="arrow-right" />
-        </Link> */}
+        <Image
+          source={
+            colorScheme === "light"
+              ? require("@/assets/images/logo_mim_light.png")
+              : require("@/assets/images/logo_mim_dark.png")
+          }
+          className="mb-[4rem] self-center"
+        />
       </View>
-    </View>
+      <View className="w-[95%] h-[35%] gap-4">
+        <View className="bg-foreground dark:bg-foreground-dark rounded-2xl">
+          <FontAwesome.Button
+            name="apple"
+            size={30}
+            style={styles.button}
+            backgroundColor="transparent"
+          />
+        </View>
+        <View className="bg-foreground dark:bg-foreground-dark rounded-2xl">
+          <FontAwesome.Button
+            name="google"
+            size={30}
+            style={styles.button}
+            backgroundColor="transparent"
+          />
+        </View>
+        <View className="bg-foreground dark:bg-foreground-dark rounded-2xl">
+          <FontAwesome.Button
+            name="facebook"
+            size={30}
+            style={styles.button}
+            backgroundColor="transparent"
+          />
+        </View>
+      </View>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: "transparent",
+    alignSelf: "center",
+    padding: 35,
+  },
+});
