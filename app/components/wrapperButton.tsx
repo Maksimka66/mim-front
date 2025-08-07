@@ -1,11 +1,31 @@
-import { Button, View } from 'react-native'
+import { Pressable, StyleSheet, Text } from "react-native";
 
-const wrapperButton = ({ images, callback, className }) => {
-	return (
-		<View>
-			<Button />
-		</View>
-	)
+interface IWrapperButtonProps {
+    imageURL: string;
+    className: string;
+    callback: () => any;
 }
 
-export default wrapperButton
+const WrapperButton = ({
+    imageURL,
+    callback,
+    className,
+}: IWrapperButtonProps) => {
+    return (
+        <Pressable
+            onPress={callback}
+            className={className}
+            style={styles.settingsButton}
+        >
+            <Text>{imageURL}</Text>
+        </Pressable>
+    );
+};
+
+export default WrapperButton;
+
+const styles = StyleSheet.create({
+    settingsButton: {
+        padding: 30,
+    },
+});
