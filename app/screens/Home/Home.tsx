@@ -1,8 +1,10 @@
+import ActionIcon from "@/app/components/ActionIcon";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { LinearGradient } from "expo-linear-gradient";
+import { Link } from "expo-router";
 import { useColorScheme } from "nativewind";
 import React from "react";
-import { TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
@@ -21,16 +23,10 @@ export default function Home() {
           className="flex-1 rounded-full"
         />
       </View>
-      <TouchableOpacity className="w-20 self-end">
-        <FontAwesome.Button
-          onPress={toggleTheme}
-          name={colorScheme === "light" ? "sun-o" : "moon-o"}
-          color="black"
-          size={30}
-          className="self-center"
-          backgroundColor="transparent"
-        />
-      </TouchableOpacity>
+      <Link href="./Gallery" push asChild>
+        <FontAwesome.Button name="arrow-right" />
+      </Link>
+      <ActionIcon name="facebook" />
     </SafeAreaView>
   );
 }

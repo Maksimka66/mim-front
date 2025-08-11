@@ -3,9 +3,14 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"],
+      "@assets/*": ["./app/assets/*"],
+      "@components/*": ["./app/components/*"],
+      "@navigators/*": ["./app/navigators/*"],
+      "@screens/*": ["./app/screens/*"],
+      "@services/*": ["./app/services/*"],
+      "@store/*": ["./app/store/*"],
+      
     }
   },
   "include": [

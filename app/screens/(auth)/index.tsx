@@ -28,8 +28,8 @@ export default function Index() {
         <Image
           source={
             colorScheme === "light"
-              ? require("@/assets/images/logo_mim_light.png")
-              : require("@/assets/images/logo_mim_dark.png")
+              ? require("@assets/images/logo_mim_light.png")
+              : require("@assets/images/logo_mim_dark.png")
           }
           className="mb-[4rem] self-center"
         />
