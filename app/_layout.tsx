@@ -2,7 +2,7 @@ import { Stack } from "expo-router";
 import React from "react";
 import { StatusBar } from "react-native";
 import "./global.css";
-import SettingsMenu from "./screens/SettingsMenu";
+import SettingsMenu from "@/app/screens/Settings/SettingsMenu";
 
 export default function RootLayout() {
     return (

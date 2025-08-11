@@ -1,4 +1,4 @@
-import ActionIcon from "@/components/ActionIcon";
+import ActionIcon from "@/app/components/ActionIcon";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
@@ -16,7 +16,7 @@ export default function Home() {
           className="flex-1 rounded-full"
         />
       </View>
-      <Link href="/(tabs)/gallery" push asChild>
+      <Link href="./Gallery" push asChild>
         <FontAwesome.Button name="arrow-right" />
       </Link>
       <ActionIcon name="facebook" />
