@@ -1,19 +1,17 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { LinearGradient } from "expo-linear-gradient";
 import { Tabs } from "expo-router";
-import { View } from "react-native";
+import { useColorScheme } from "nativewind";
+import { Image } from "react-native";
 
 export default function Layout() {
+  const { colorScheme } = useColorScheme();
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "#0D919BD6",
-        tabBarInactiveTintColor: "#fff",
-        tabBarAllowFontScaling: true,
         tabBarShowLabel: false,
-        tabBarBackground: () => (
-          <View className="flex-1 rounded-2xl overflow-hidden">
+
+        tabBarBackground: () =>
+          colorScheme === "light" && (
             <LinearGradient
               colors={[
                 "#FEA339DB",
@@ -24,15 +22,12 @@ export default function Layout() {
               ]}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 0 }}
-              style={{ flex: 1 }}
+              style={{ flex: 1, borderRadius: 20 }}
             />
-          </View>
-        ),
+          ),
         tabBarStyle: {
-          alignSelf: "center",
-          justifyContent: "center",
-          backgroundColor: "transparent",
-          width: "95%",
+          paddingBottom: 0,
+          borderRadius: 20,
           marginBottom: 24,
         },
       }}
@@ -41,8 +36,14 @@ export default function Layout() {
         name="home"
         options={{
           headerShown: false,
-          tabBarIcon: ({ color }) => (
-            <MaterialIcons name="home" size={28} color={color} />
+          tabBarIcon: () => (
+            <Image
+              source={
+                colorScheme === "light"
+                  ? require("@/assets/images/light/navigation-icons/house-icon.png")
+                  : require("@/assets/images/dark/navigation-icons-dark/house-icon-dark.png")
+              }
+            />
           ),
         }}
       />
@@ -50,8 +51,14 @@ export default function Layout() {
         name="gallery"
         options={{
           headerShown: false,
-          tabBarIcon: ({ color }) => (
-            <MaterialIcons name="palette" size={28} color={color} />
+          tabBarIcon: () => (
+            <Image
+              source={
+                colorScheme === "light"
+                  ? require("@/assets/images/light/navigation-icons/palette-icon.png")
+                  : require("@/assets/images/dark/navigation-icons-dark/palette-icon-dark.png")
+              }
+            />
           ),
         }}
       />
@@ -60,8 +67,14 @@ export default function Layout() {
         options={{
           headerShown: false,
 
-          tabBarIcon: ({ color }) => (
-            <FontAwesome name="heart" size={28} color={color} />
+          tabBarIcon: () => (
+            <Image
+              source={
+                colorScheme === "light"
+                  ? require("@/assets/images/light/navigation-icons/heart-icon.png")
+                  : require("@/assets/images/dark/navigation-icons-dark/heart-icon-dark.png")
+              }
+            />
           ),
         }}
       />

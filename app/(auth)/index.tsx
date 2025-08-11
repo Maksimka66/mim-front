@@ -1,5 +1,5 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Stack } from "expo-router";
+import { router, Stack } from "expo-router";
 import { useColorScheme } from "nativewind";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -10,6 +10,7 @@ export default function Index() {
   const toggleTheme = () => {
     setColorScheme(colorScheme === "dark" ? "light" : "dark");
   };
+
   return (
     <SafeAreaView className="flex-1 items-center justify-center bg-background dark:bg-background-dark">
       <Stack.Screen options={{ headerShown: false }} />
@@ -34,14 +35,15 @@ export default function Index() {
         />
       </View>
       <View className="w-[95%] h-[35%] gap-4">
-        <View className="bg-foreground dark:bg-foreground-dark rounded-2xl">
+        <TouchableOpacity className="bg-foreground dark:bg-foreground-dark rounded-2xl">
           <FontAwesome.Button
+            onPress={() => router.push("/(tabs)/home")}
             name="apple"
             size={30}
             style={styles.button}
             backgroundColor="transparent"
           />
-        </View>
+        </TouchableOpacity>
         <View className="bg-foreground dark:bg-foreground-dark rounded-2xl">
           <FontAwesome.Button
             name="google"

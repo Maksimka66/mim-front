@@ -1,11 +1,14 @@
+import { useColorScheme } from "nativewind";
 import React from "react";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 function Gallery() {
+  const { colorScheme, setColorScheme } = useColorScheme();
   return (
-    <View>
-      <Text> Безмежний простір</Text>
-    </View>
+    <SafeAreaView>
+      <Text> {colorScheme}</Text>
+    </SafeAreaView>
   );
 }
 
