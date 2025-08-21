@@ -1,6 +1,5 @@
+import WrapperButton from "@/app/components/wrapperButton";
 import { StyleSheet, View } from "react-native";
-
-import WrapperButton from "@components/WrapperButton";
 
 const SettingsMenu = () => {
   return (
@@ -8,30 +7,38 @@ const SettingsMenu = () => {
       <View style={styles.content}>
         <WrapperButton
           className="settingsButton"
-          imageURL="https://example.com/image1.png"  //
-          callback={() => { /* handle button 1 click */ }}
+          imageURL="https://example.com/image1.png" //
+          callback={() => {
+            /* handle button 1 click */
+          }}
         />
         <WrapperButton
           className="settingsButton"
           imageURL="https://example.com/image2.png"
-          callback={() => { /* handle button 2 click */ }}
+          callback={() => {
+            /* handle button 2 click */
+          }}
         />
       </View>
       <View>
         <WrapperButton
           className="settingsButton"
           imageURL="https://example.com/image3.png"
-          callback={() => { /* handle button 3 click */ }}
+          callback={() => {
+            /* handle button 3 click */
+          }}
         />
         <WrapperButton
           className="settingsButton"
           imageURL="https://example.com/image4.png"
-          callback={() => { /* handle button 4 click */ }}
+          callback={() => {
+            /* handle button 4 click */
+          }}
         />
       </View>
       <View>
-        <WrapperButton className="settingsButton" />
-        <WrapperButton className="settingsButton" />
+        {/* <WrapperButton className="settingsButton" />
+        <WrapperButton className="settingsButton" /> */}
       </View>
     </View>
   );

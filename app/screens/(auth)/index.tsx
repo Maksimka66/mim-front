@@ -1,5 +1,5 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { router, Stack } from "expo-router";
+import { Stack } from "expo-router";
 import { useColorScheme } from "nativewind";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -37,7 +37,6 @@ export default function Index() {
       <View className="w-[95%] h-[35%] gap-4">
         <TouchableOpacity className="bg-foreground dark:bg-foreground-dark rounded-2xl">
           <FontAwesome.Button
-            onPress={() => router.push("/(tabs)/home")}
             name="apple"
             size={30}
             style={styles.button}

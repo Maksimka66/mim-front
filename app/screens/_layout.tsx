@@ -1,7 +1,8 @@
+import { darkIcons, lightIcons } from "@/assets/images/";
 import { LinearGradient } from "expo-linear-gradient";
 import { Tabs } from "expo-router";
 import { useColorScheme } from "nativewind";
-import { Image } from "react-native";
+import { Image, StyleSheet } from "react-native";
 
 export default function Layout() {
   const { colorScheme } = useColorScheme();
@@ -33,46 +34,44 @@ export default function Layout() {
       }}
     >
       <Tabs.Screen
-        name="home"
+        name="Home/Home"
         options={{
           headerShown: false,
           tabBarIcon: () => (
             <Image
+              style={styles.tabsImage}
               source={
-                colorScheme === "light"
-                  ? require("@/assets/images/light/navigation-icons/house-icon.png")
-                  : require("@/assets/images/dark/navigation-icons-dark/house-icon-dark.png")
+                colorScheme === "light" ? lightIcons.home : darkIcons.home
               }
             />
           ),
         }}
       />
       <Tabs.Screen
-        name="gallery"
+        name="Gallery/Gallery"
         options={{
           headerShown: false,
           tabBarIcon: () => (
             <Image
+              style={styles.tabsImage}
               source={
-                colorScheme === "light"
-                  ? require("@/assets/images/light/navigation-icons/palette-icon.png")
-                  : require("@/assets/images/dark/navigation-icons-dark/palette-icon-dark.png")
+                colorScheme === "light" ? lightIcons.palette : darkIcons.palette
               }
             />
           ),
         }}
       />
-      <Tabs.Screen
-        name="preferences"
-        options={{
-          headerShown: false,
 
+      <Tabs.Screen name="(auth)" options={{ href: null }} />
+      <Tabs.Screen
+        name="Settings/SettingsMenu"
+        options={{
+          headerShown: false,
           tabBarIcon: () => (
             <Image
+              style={styles.tabsImage}
               source={
-                colorScheme === "light"
-                  ? require("@/assets/images/light/navigation-icons/heart-icon.png")
-                  : require("@/assets/images/dark/navigation-icons-dark/heart-icon-dark.png")
+                colorScheme === "light" ? lightIcons.heart : darkIcons.heart
               }
             />
           ),
@@ -81,3 +80,9 @@ export default function Layout() {
     </Tabs>
   );
 }
+const styles = StyleSheet.create({
+  tabsImage: {
+    width: 30,
+    height: 30,
+  },
+});
