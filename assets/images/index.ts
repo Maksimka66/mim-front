@@ -19,6 +19,10 @@ export const lightIcons = {
   artboardBottom1: require("./light/bottom-icons-bar/delete-icon.png"),
   artboardBottom2: require("./light/bottom-icons-bar/download-icon.png"),
   artboardBottom3: require("./light/bottom-icons-bar/share-icon.png"),
+  galleryBottom1: require("./light/gallery-icons/bookmark_light.png"),
+  galleryBottom2: require("./light/gallery-icons/comment_light.png"),
+  galleryBottom3: require("./light/gallery-icons/share_light.png"),
+  galleryBottom4: require("./light/gallery-icons/thumbs_up_light.png"),
 };
 
 // Dark theme icons
@@ -42,4 +46,10 @@ export const darkIcons = {
   artboardBottom1: require("./dark/bottom-bar-icons-dark/fi-sr-download.png"),
   artboardBottom2: require("./dark/bottom-bar-icons-dark/fi-sr-share.png"),
   artboardBottom3: require("./dark/bottom-bar-icons-dark/fi-sr-trash.png"),
+  galleryBottom1: require("./dark/gallery-icons/bookmark_dark.png"),
+  galleryBottom2: require("./dark/gallery-icons/comment_dark.png"),
+  galleryBottom3: require("./dark/gallery-icons/share_dark.png"),
+  galleryBottom4: require("./dark/gallery-icons/thumbs_up_dark.png"),
 };
+
+export const User = { user: require("./user_icon_light.png") };

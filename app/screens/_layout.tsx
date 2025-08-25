@@ -48,7 +48,7 @@ export default function Layout() {
         }}
       />
       <Tabs.Screen
-        name="Gallery/Gallery"
+        name="Artboard/Artboard"
         options={{
           headerShown: false,
           tabBarIcon: () => (
@@ -63,6 +63,20 @@ export default function Layout() {
       />
 
       <Tabs.Screen name="(auth)" options={{ href: null }} />
+      <Tabs.Screen
+        name="Gallery/Gallery"
+        options={{
+          headerShown: false,
+          tabBarIcon: () => (
+            <Image
+              style={styles.tabsImage}
+              source={
+                colorScheme === "light" ? lightIcons.heart : darkIcons.heart
+              }
+            />
+          ),
+        }}
+      />
       <Tabs.Screen
         name="Settings/SettingsMenu"
         options={{
